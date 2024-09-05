@@ -147,3 +147,6 @@ def italianize_text(comment):
     return italianized_comment
 
 
+# Example usage
+comment = "I just cooked a pizza"
+print(italianize_text(comment))
