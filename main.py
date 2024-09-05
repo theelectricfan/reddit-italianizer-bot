@@ -1,3 +1,4 @@
+import time
 import praw
 import config
 from italianize_text import italianize_text
@@ -12,7 +13,7 @@ reddit = praw.Reddit(
 
 
 def check_mentions():
-    for mention in reddit.inbox.mentions(limit=10):  # Adjust limit as needed
+    for mention in reddit.inbox.mentions(limit=5):  # Adjust limit as needed
         # Skip already read mentions
         if mention.new:
             print(f"Mention from: {mention.author} - {mention.body}")
@@ -29,6 +30,18 @@ def check_mentions():
 
             mention.mark_read()  # Mark the mention as read after responding
 
-# Run the bot
+
+def run_bot():
+    while True:
+        try:
+            check_mentions()
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+        # Wait before checking again (30 seconds delay)
+        time.sleep(60)
+
+
+# Run the bot continuously
 if __name__ == "__main__":
-    check_mentions()
+    run_bot()

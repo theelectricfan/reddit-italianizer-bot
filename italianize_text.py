@@ -147,6 +147,3 @@ def italianize_text(comment):
     return italianized_comment
 
 
-# Example usage
-comment = "we live in a beautiful world"
-print(italianize_text(comment))
