@@ -1,7 +1,7 @@
 Reddit Italianizer Bot
 ======================
 
-A Reddit bot that takes in comments and translates them into a stereotypical Italian-American dialect.
+A Reddit bot that takes in comments and translates them into funny stereotypical Italian-American dialect.
 
 Installation
 ------------
